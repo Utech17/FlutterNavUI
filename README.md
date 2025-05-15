@@ -1,31 +1,36 @@
-📱 Proyecto Flutter: Menú Lateral, Menú Inferior, Navegación y Más
-Este proyecto de Flutter implementa varios componentes clave para una aplicación móvil, incluyendo menú lateral, menú inferior, navegación entre pantallas, carga de imágenes desde internet y ventanas de confirmación. A continuación, se detalla cómo comenzar y algunas características destacadas.
+# 📱 Proyecto Flutter: Menú Lateral, Menú Inferior, Navegación y Más
 
-Características
-Menú Lateral: Implementación de un drawer (menú lateral) que permite navegar entre las diferentes secciones de la aplicación.
+Este proyecto de Flutter implementa varios componentes clave para una aplicación móvil moderna, incluyendo menú lateral, barra de navegación inferior, navegación entre pantallas, carga de imágenes desde internet y ventanas de confirmación.
 
-Menú Inferior: Barra de navegación inferior para un acceso rápido a las funciones principales de la aplicación.
+---
 
-Navegación entre Pantallas: Utilización de Navigator para gestionar la navegación entre las distintas vistas de la aplicación.
+## 🚩 Características
 
-Mostrar Imágenes desde Internet: Carga y visualización de imágenes almacenadas en servidores remotos.
+- **Menú Lateral:** Drawer personalizado para navegar entre las distintas secciones de la aplicación.
+- **Menú Inferior:** Barra de navegación inferior para acceso rápido a las funciones principales.
+- **Navegación entre Pantallas:** Gestión de rutas y vistas mediante `Navigator`.
+- **Carga de Imágenes desde Internet:** Visualización de imágenes alojadas remotamente.
+- **Ventanas de Confirmación:** Diálogos interactivos para confirmar acciones críticas.
 
-Ventana de Confirmación: Diálogos interactivos para confirmar acciones críticas dentro de la aplicación.
+---
 
-📁 Estructura del Proyecto
-Subido al repositorio:
+## 📁 Estructura del Proyecto
 
-📁 assets/               # Recursos estáticos (íconos, imágenes locales)
-📁 lib/                  # Código fuente (pantallas, widgets, lógica)
-📄 pubspec.yaml          # Configuración de dependencias
-📄 README.md             # Este archivo
-❌ Se excluyen carpetas generadas automáticamente como .android/, .ios/, build/, etc. 
-siguiendo buenas prácticas con .gitignore.
+- assets/ # Recursos estáticos (íconos, imágenes locales)
+- lib/ # Código fuente (pantallas, widgets, lógica)
+- pubspec.yaml # Configuración de dependencias
+- README.md # Este archivo
+- .gitignore # Excluye carpetas generadas automáticamente (.android/, .ios/, build/, etc.)
 
-🚀 Ejecución del Proyecto
-Asegúrate de tener Flutter instalado:
 
-Ejecuta en tu dispositivo o emulador:
+---
 
-flutter pub get
-flutter run
+## 🚀 Ejecución del Proyecto
+
+Asegúrate de tener [Flutter](https://flutter.dev/docs/get-started/install) instalado en tu equipo.
+
+1. Instala las dependencias:
+- flutter pub get
+2. Ejecuta la aplicación en tu dispositivo o emulador:
+- flutter run
+
