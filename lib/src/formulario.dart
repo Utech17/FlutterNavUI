@@ -1,7 +1,11 @@
 // Miguel Gutierrez 31319357 seccion B
 // ignore_for_file: avoid_print
+// ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:menu_lateral_miguel_gutierrez_b/src/calculadora.dart';
+import 'package:menu_lateral_miguel_gutierrez_b/src/home.dart';
+import 'package:menu_lateral_miguel_gutierrez_b/src/formulario.dart';
 
 class Formulario extends StatefulWidget {
   const Formulario({super.key, required this.title});
@@ -30,6 +34,25 @@ class _FormularioState extends State<Formulario> {
   String _sexo='';
   bool onOff=false;
   double _valorSlider = 0;
+
+  int _selectedIndex = 2; 
+
+  void _onItemTapped(int index) {
+  setState(() {
+    _selectedIndex = index;
+  });
+  switch (index) {
+    case 0:
+      Navigator.pushNamed(context, '/calculadora');
+      break;
+    case 1:
+      Navigator.pushNamed(context, '/'); // Home
+      break;
+    case 2:
+      Navigator.pushNamed(context, '/formulario'); 
+      break;
+    }
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -292,6 +315,29 @@ class _FormularioState extends State<Formulario> {
         },
         tooltip: 'Salir',
         child: const Icon(Icons.exit_to_app),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calculate), 
+            backgroundColor:Colors.lightBlueAccent, 
+            label:'Calculadora')
+            ,
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home), 
+            backgroundColor:Colors.lightBlue, 
+            label:'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assignment),
+            backgroundColor: Colors.blue, 
+            label:'Formulario'),
+        ],
+        type: BottomNavigationBarType.shifting,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black,
+        iconSize: 30,
+        onTap: _onItemTapped,
+        elevation: 5
       ),
     );
   }

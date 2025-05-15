@@ -1,5 +1,10 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:menu_lateral_miguel_gutierrez_b/src/calculadora.dart';
+import 'package:menu_lateral_miguel_gutierrez_b/src/home.dart';
+import 'package:menu_lateral_miguel_gutierrez_b/src/formulario.dart';
 
 
 class Calculadora extends StatefulWidget {
@@ -14,6 +19,25 @@ class _CalculadoraState extends State<Calculadora> {
   final TextEditingController controllerNumero1 = TextEditingController();
   final TextEditingController controllerNumero2 = TextEditingController();
   final TextEditingController controllerResultado = TextEditingController();
+
+  int _selectedIndex = 0; 
+
+  void _onItemTapped(int index) {
+  setState(() {
+    _selectedIndex = index;
+  });
+  switch (index) {
+    case 0:
+      Navigator.pushNamed(context, '/calculadora');
+      break;
+    case 1:
+      Navigator.pushNamed(context, '/'); // Home
+      break;
+    case 2:
+      Navigator.pushNamed(context, '/formulario'); 
+      break;
+    }
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -208,6 +232,29 @@ class _CalculadoraState extends State<Calculadora> {
             const SizedBox(height: 10),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calculate), 
+            backgroundColor:Colors.lightBlueAccent, 
+            label:'Calculadora')
+            ,
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home), 
+            backgroundColor:Colors.lightBlue, 
+            label:'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assignment),
+            backgroundColor: Colors.blue, 
+            label:'Formulario'),
+        ],
+        type: BottomNavigationBarType.shifting,
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.black,
+        iconSize: 30,
+        onTap: _onItemTapped,
+        elevation: 5
       ),
     );
   }
